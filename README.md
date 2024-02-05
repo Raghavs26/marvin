@@ -6,6 +6,10 @@
 4. Install the dependencies using `pip install -r requirements.txt`
 5. Run the project using `python main.py`
 
+# Testing
+
+1. To run tests just run `python -m unittest tests.test`
+
 # Endpoints
 
 1. /frequency: Analyzes the word frequency of a Wikipedia article.
