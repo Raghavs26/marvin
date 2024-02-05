@@ -8,7 +8,9 @@ app = Flask(__name__)
 search_history = []
 
 
-def word_frequency(topic, n):
+def word_frequency(topic: str, n: int):
+    temp_topic = topic
+    topic = topic.strip().replace(" ", "")
     try:
         article_text = summary(topic)
     except DisambiguationError as e:
@@ -52,7 +54,7 @@ def word_frequency(topic, n):
 
     word_counts = Counter(text)
     top_words = word_counts.most_common(n)
-    response = {"topic": topic, "top_words": top_words}
+    response = {"topic": temp_topic, "top_words": top_words}
     return response
 
 
